@@ -23,30 +23,29 @@ class imp_res : public Restaurant
 		};
 
 		~imp_res(){
-            customer* temp_temp=temp;
-			if(temp_temp) temp_temp->kan->next=nullptr;
-            while(temp_temp){
-                temp=temp->next;
-				temp_temp->next=nullptr;
-				temp_temp->prev=nullptr;
-                delete temp_temp;
-                temp_temp=temp;
-            }
-            temp_temp=wait;
-            while(temp_temp){
-                wait=wait->next;
-                delete temp_temp;
-                temp_temp=wait;
-            };
-            temp_temp=head;
-            while(temp_temp){
-                delete temp_temp->prev;
-                head=head->next;
-                delete temp_temp;
-                temp_temp=head;
-            };
-			cout<<"HUY THANH CONG"<<endl;
-        }
+	            customer* temp_temp=temp;
+				if(temp_temp) temp_temp->kan->next=nullptr;
+	            while(temp_temp){
+	                temp=temp->next;
+					temp_temp->next=nullptr;
+					temp_temp->prev=nullptr;
+	                delete temp_temp;
+	                temp_temp=temp;
+	            }
+	            temp_temp=wait;
+	            while(temp_temp){
+	                wait=wait->next;
+	                delete temp_temp;
+	                temp_temp=wait;
+	            };
+	            temp_temp=head;
+	            while(temp_temp){
+	                delete temp_temp->prev;
+	                head=head->next;
+	                delete temp_temp;
+	                temp_temp=head;
+	            };
+	        }
 		void RED(string name, int energy)	//Handle Red
 		{
 			customer *cus = new customer (name, energy, nullptr, nullptr);
